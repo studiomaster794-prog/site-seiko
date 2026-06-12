@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio Seiko | Relojoaria, Relógios e Serviços em Cururupu - MA</title>
+  <meta name="description" content="Studio Seiko em Cururupu - MA: relógios originais, assistência técnica de relógios, troca de baterias, conserto de óculos, afiação de alicates, solda de joias e gravações.">
+  <meta name="keywords" content="Studio Seiko, relojoaria em Cururupu, relojoaria em Cururupu MA, relógios originais em Cururupu, assistência técnica de relógios em Cururupu, troca de bateria de relógio em Cururupu, conserto de relógios em Cururupu, conserto de óculos em Cururupu, afiação de alicates em Cururupu, solda de joias em Cururupu, gravação de músicas para pendrive em Cururupu, vinhetas para DJ em Cururupu, comerciais para lojas em Cururupu">
+  <meta name="author" content="Studio Seiko">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://studioseiko.vercel.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Studio Seiko - Tradição e inovação em Cururupu">
+  <meta property="og:description" content="Relógios originais, assistência técnica, conserto de óculos, afiação de alicates, solda de joias e gravações no centro de Cururupu - MA.">
+  <meta property="og:image" content="https://studioseiko.vercel.app/assets/fachada/fachada.jpg">
+  <meta property="og:url" content="https://studioseiko.vercel.app/">
+  <meta property="og:site_name" content="Studio Seiko">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/logo/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Preload do primeiro frame da animação do hero, para carregar rápido -->
+  <link rel="preload" as="image" href="imagens/Watch_assembly_luxury_animation_202606121736_000.jpg" fetchpriority="high">
+
+  <style>
+    /* ===== Hero em movimento (animação por sequência de frames) ===== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #0a0a0a; /* cor de fundo enquanto a animação carrega */
+    }
+
+    .hero-frames {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hero-frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      filter: brightness(1.25) contrast(1.1) saturate(1.1);
+    }
+
+    .hero-frame.is-ready {
+      opacity: 1;
+    }
+
+    /* Reduz a escurecida sobre a animação, mantendo o texto legível */
+    .hero > .hero-overlay {
+      opacity: 0.65;
+    }
+
+    /* Garante que o overlay e o conteúdo fiquem por cima da animação */
+    .hero > .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    .hero > .hero-content,
+    .hero > .scroll-cue {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Respeita usuários que preferem menos movimento: mostra só o primeiro frame */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-frame {
+        transition: opacity 1.2s ease-in-out;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Store", "LocalBusiness"],
+    "name": "Studio Seiko",
+    "image": "https://studioseiko.vercel.app/assets/fachada/fachada.jpg",
+    "description": "Relojoaria, venda de relógios originais, assistência técnica, conserto de óculos, afiação de alicates, solda de joias e gravações em Cururupu.",
+    "telephone": "+55 98 98404-3949",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Dom Pedro 2º, Centro",
+      "addressLocality": "Cururupu",
+      "addressRegion": "MA",
+      "addressCountry": "BR"
+    },
+    "areaServed": "Cururupu e região",
+    "sameAs": ["https://instagram.com/studioseikocpu"],
+    "url": "https://studioseiko.vercel.app/",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Produtos e serviços Studio Seiko",
+      "itemListElement": [
+        {"@type": "OfferCatalog", "name": "Venda de relógios originais"},
+        {"@type": "OfferCatalog", "name": "Assistência técnica de relógios"},
+        {"@type": "OfferCatalog", "name": "Conserto de óculos"},
+        {"@type": "OfferCatalog", "name": "Afiação de alicates"},
+        {"@type": "OfferCatalog", "name": "Solda de joias"},
+        {"@type": "OfferCatalog", "name": "Gravações"}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="header-shell">
+      <a class="brand" href="#inicio" aria-label="Studio Seiko - início">
+        <img src="assets/logo/logo.png" alt="" width="48" height="51">
+        <span class="brand-copy">
+          <strong>Studio Seiko</strong>
+          <small>Cururupu · Maranhão</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#historia">Quem Somos</a>
+        <a href="#relogios">Relógios</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="header-cta" href="https://wa.me/5598984043949?text=Olá%2C%20Studio%20Seiko!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener">
+        <i data-lucide="message-circle" aria-hidden="true"></i>
+        <span>Falar agora</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-menu" aria-label="Navegação para celular" hidden>
+      <a href="#inicio">Início</a>
+      <a href="#historia">Quem Somos</a>
+      <a href="#relogios">Relógios</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-frames" aria-hidden="true">
+        <img class="hero-frame" id="hero-frame" src="imagens/Watch_assembly_luxury_animation_202606121736_000.jpg" alt="" fetchpriority="high">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Desde a década de 1980 em Cururupu</p>
+          <h1 id="hero-title">Studio Seiko</h1>
+          <p class="hero-lead">Tradição, confiança e inovação em Cururupu e região.</p>
+          <p class="hero-description">Relógios originais, assistência técnica especializada, conserto de óculos, afiação de alicates, solda de joias e gravações para pendrive, DJs, lojas e eventos.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://wa.me/5598984043949?text=Olá%2C%20Studio%20Seiko!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener">
+              <i data-lucide="message-circle" aria-hidden="true"></i>
+              Chamar no WhatsApp
+            </a>
+            <a class="button button-secondary" href="#servicos">
+              Ver serviços
+              <i data-lucide="arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-detail reveal" aria-label="Localização do Studio Seiko">
+          <div class="hero-detail-icon"><i data-lucide="map-pin" aria-hidden="true"></i></div>
+          <div>
+            <small>Visite nossa loja</small>
+            <strong>Rua Dom Pedro 2º, Centro</strong>
+            <span>Cururupu · MA</span>
+          </div>
+        </aside>
+      </div>
+      <a class="scroll-cue" href="#destaques" aria-label="Continuar para a próxima seção">
+        <span>Conheça o Studio</span>
+        <i data-lucide="arrow-down" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <section class="trust-strip" id="destaques" aria-label="Diferenciais">
+      <div class="container trust-grid">
+        <div class="trust-item reveal">
+          <i data-lucide="shield-check" aria-hidden="true"></i>
+          <div><strong>Confiança há décadas</strong><span>Uma história familiar em Cururupu</span></div>
+        </div>
+        <div class="trust-item reveal">
+          <i data-lucide="watch" aria-hidden="true"></i>
+          <div><strong>Relógios originais</strong><span>Marcas reconhecidas e diversos estilos</span></div>
+        </div>
+        <div class="trust-item reveal">
+          <i data-lucide="wrench" aria-hidden="true"></i>
+          <div><strong>Serviços especializados</strong><span>Cuidado, precisão e bom atendimento</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story section" id="historia">
+      <div class="container story-grid">
+        <div class="story-visual reveal">
+          <figure class="story-main-image">
+            <img src="assets/Foto_Joao-Soua.jpg.png" alt="João Souza, relojoeiro fundador da tradicional Relojoaria Seiko na década de 1980" width="1024" height="768" loading="lazy">
+          </figure>
+          <div class="story-badge">
+            <i data-lucide="clock-3" aria-hidden="true"></i>
+            <span><strong>Desde os anos 80</strong>Tradição que evolui</span>
+          </div>
+        </div>
+
+        <div class="story-copy reveal">
+          <p class="section-kicker">Quem somos</p>
+          <h2>Nossa História</h2>
+          <p class="story-intro">A história do Studio Seiko começou muito antes do nome existir.</p>
+          <p>Tudo teve início na década de 1980, quando João Souza deixou o estado de Goiás e chegou a Cururupu, no Maranhão, trazendo consigo o conhecimento, a dedicação e a paixão pela profissão de relojoeiro. Foi assim que nasceu a tradicional Relojoaria Seiko.</p>
+          <p>Durante muitos anos, a relojoaria se tornou referência em Cururupu e região, conquistando a confiança de gerações de clientes que buscavam qualidade, precisão e serviços especializados.</p>
+          <div class="story-more" id="story-more" hidden>
+            <p>Em 2003, a família enfrentou um momento muito difícil com o falecimento de João Souza em um acidente de trânsito. Mas o legado deixado por ele continuou vivo através dos ensinamentos transmitidos ao longo dos anos.</p>
+            <p>Antes mesmo desse período, eu já trabalhava no ramo de gravações, produzindo vinhetas para DJs, gravando músicas em fitas cassete (K7) e CDs, acompanhando a evolução da tecnologia e das necessidades dos clientes. Com o passar do tempo, percebi que poderia unir duas paixões: a relojoaria que aprendi com meu pai e o universo do áudio e da gravação.</p>
+            <p>Foi dessa união que nasceu o Studio Seiko. Mais do que uma simples mudança de nome, representa a evolução de uma história construída com dedicação, inovação e compromisso com a comunidade.</p>
+            <p>Hoje, o Studio Seiko reúne venda de relógios originais, assistência técnica especializada, conserto de óculos, afiação profissional de alicates, solda de joias e semijoias, além de gravações para clientes, DJs, empresas e eventos.</p>
+            <p>Nossa missão continua sendo a mesma desde os tempos da antiga Relojoaria Seiko: oferecer produtos de qualidade, serviços confiáveis e um atendimento diferenciado, honesto e dedicado.</p>
+          </div>
+          <button class="text-button" type="button" data-story-toggle aria-expanded="false" aria-controls="story-more">
+            <span>Continuar lendo</span>
+            <i data-lucide="arrow-down" aria-hidden="true"></i>
+          </button>
+          <blockquote>“Tradição, confiança e inovação há décadas fazendo parte da história de nossos clientes.”</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="watches section" id="relogios">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">Relógios originais</p>
+            <h2>O relógio certo para cada momento</h2>
+          </div>
+          <p>No Studio Seiko você encontra relógios masculinos e femininos originais das melhores marcas, com opções elegantes, modernas e resistentes para todos os estilos.</p>
+        </div>
+
+        <div class="brand-list reveal" aria-label="Marcas disponíveis">
+          <span>Orient</span><span>Lince</span><span>Technos</span><span>Champion</span><span>VIP</span><span>Invicta</span><span>Diesel</span><span>Casio</span>
+        </div>
+
+        <div class="watch-grid">
+          <article class="watch-card watch-card-featured reveal">
+            <img src="assets/relogios/orient.jpg" alt="Relógio masculino Orient disponível no Studio Seiko" width="896" height="1200" loading="lazy">
+            <div class="watch-card-copy">
+              <span>Clássico e preciso</span>
+              <h3>Orient</h3>
+              <p>Elegância para acompanhar sua rotina e seus melhores momentos.</p>
+            </div>
+          </article>
+          <article class="watch-card reveal">
+            <img src="assets/relogios/lince.jpg" alt="Kit de relógio Lince disponível no Studio Seiko" width="896" height="1200" loading="lazy">
+            <div class="watch-card-copy"><span>Delicado e atual</span><h3>Lince</h3></div>
+          </article>
+          <article class="watch-card reveal">
+            <img src="assets/relogios/technos.jpg" alt="Relógio masculino Technos disponível no Studio Seiko" width="896" height="1200" loading="lazy">
+            <div class="watch-card-copy"><span>Presença e resistência</span><h3>Technos</h3></div>
+          </article>
+          <article class="watch-card reveal">
+            <img src="assets/relogios/casio.jpg" alt="Relógio Casio disponível no Studio Seiko" width="896" height="1200" loading="lazy">
+            <div class="watch-card-copy"><span>Prático e versátil</span><h3>Casio</h3></div>
+          </article>
+          <article class="watch-card watch-card-featured reveal">
+            <img src="assets/relogio-champion_digital.jpg.jpeg" alt="Relógio Champion Digital dourado disponível no Studio Seiko" width="896" height="1200" loading="lazy">
+            <div class="watch-card-copy">
+              <span>Moderno e ousado</span>
+              <h3>Champion</h3>
+              <p>Design digital com acabamento dourado para quem busca estilo e tecnologia.</p>
+            </div>
+          </article>
+          <article class="watch-card reveal">
+            <img src="assets/relogio-orient-feminino.jpg.jpeg" alt="Relógio feminino Orient dourado com mostrador azul disponível no Studio Seiko" width="896" height="1200" loading="lazy">
+            <div class="watch-card-copy"><span>Sofisticado e feminino</span><h3>Orient</h3></div>
+          </article>
+          <article class="watch-card reveal">
+            <img src="assets/relogio-Technos_ceramica.jpg.jpeg" alt="Relógio Technos Cerâmica feminino disponível no Studio Seiko" width="896" height="1200" loading="lazy">
+            <div class="watch-card-copy"><span>Luxo e delicadeza</span><h3>Technos Cerâmica</h3></div>
+          </article>
+          <article class="watch-card reveal">
+            <img src="assets/relogio-vip-masculino.jpg.jpeg" alt="Relógio VIP Nautilus masculino dourado disponível no Studio Seiko" width="896" height="1200" loading="lazy">
+            <div class="watch-card-copy"><span>Imponente e robusto</span><h3>VIP Nautilus</h3></div>
+          </article>
+        </div>
+
+        <div class="section-cta reveal">
+          <p>Consulte modelos e disponibilidade diretamente com nossa equipe.</p>
+          <a class="button button-dark" href="https://wa.me/5598984043949?text=Olá%2C%20gostaria%20de%20ver%20os%20modelos%20de%20relógios%20disponíveis." target="_blank" rel="noopener">
+            Ver modelos no WhatsApp
+            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section" id="servicos">
+      <div class="container">
+        <div class="section-heading section-heading-light reveal">
+          <div>
+            <p class="section-kicker">Soluções em um só lugar</p>
+            <h2>Serviços feitos com cuidado e precisão</h2>
+          </div>
+          <p>Do relógio que marcou sua história ao serviço que facilita seu dia, tratamos cada atendimento com atenção e responsabilidade.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card service-card-image reveal">
+            <img src="assets/servicos/assistencia-relogio.jpg" alt="Assistência técnica de relógios no Studio Seiko" width="1024" height="1536" loading="lazy">
+            <div class="service-image-overlay"></div>
+            <div class="service-copy">
+              <i data-lucide="watch" aria-hidden="true"></i>
+              <span>Relojoaria</span>
+              <h3>Assistência técnica especializada</h3>
+              <p>Troca de baterias, vidros, pinos, pulseiras e ajustes.</p>
+            </div>
+          </article>
+
+          <article class="service-card service-card-image reveal">
+            <img src="assets/servicos/conserto-oculos.jpg" alt="Serviço de conserto de óculos em Cururupu" width="1448" height="1086" loading="lazy">
+            <div class="service-image-overlay"></div>
+            <div class="service-copy">
+              <i data-lucide="glasses" aria-hidden="true"></i>
+              <span>Óculos</span>
+              <h3>Conserto de óculos</h3>
+              <p>Reparos cuidadosos para recuperar o uso e o conforto.</p>
+            </div>
+          </article>
+
+          <article class="service-card service-card-image reveal">
+            <img src="assets/servicos/afiacao-alicate.jpg" alt="Afiação profissional de alicates de unha no Studio Seiko" width="1448" height="1086" loading="lazy">
+            <div class="service-image-overlay"></div>
+            <div class="service-copy">
+              <i data-lucide="scissors" aria-hidden="true"></i>
+              <span>Precisão</span>
+              <h3>Afiação de alicates</h3>
+              <p>Afiação profissional para alicates de unha.</p>
+            </div>
+          </article>
+
+          <article class="service-card service-card-image reveal">
+            <img src="assets/servicos/solda-joias.jpg" alt="Serviço de solda de joias e semijoias no Studio Seiko" width="1122" height="1059" loading="lazy">
+            <div class="service-image-overlay"></div>
+            <div class="service-copy">
+              <i data-lucide="gem" aria-hidden="true"></i>
+              <span>Joias</span>
+              <h3>Solda de joias e semijoias</h3>
+              <p>Cuidado e acabamento para peças especiais.</p>
+            </div>
+          </article>
+
+          <article class="service-card service-card-wide reveal">
+            <div class="service-wide-media">
+              <img src="assets/servicos/gravacao-pendrive.jpg" alt="Gravação de músicas para pendrive no Studio Seiko" width="1536" height="1024" loading="lazy">
+            </div>
+            <div class="service-wide-copy">
+              <div class="service-icon"><i data-lucide="audio-lines" aria-hidden="true"></i></div>
+              <p class="section-kicker">Áudio e gravação</p>
+              <h3>Músicas, vinhetas e comerciais</h3>
+              <p>Gravação de músicas para pendrive, produção de vinhetas para DJs e comerciais para lojas e eventos.</p>
+              <a class="text-link" href="https://wa.me/5598984043949?text=Olá%2C%20quero%20saber%20mais%20sobre%20os%20serviços%20de%20gravação." target="_blank" rel="noopener">Solicitar informações <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="service-tags reveal" aria-label="Lista completa de serviços">
+          <span><i data-lucide="check" aria-hidden="true"></i> Venda de relógios originais</span>
+          <span><i data-lucide="check" aria-hidden="true"></i> Troca de baterias</span>
+          <span><i data-lucide="check" aria-hidden="true"></i> Troca de vidros</span>
+          <span><i data-lucide="check" aria-hidden="true"></i> Ajuste de pulseiras</span>
+          <span><i data-lucide="check" aria-hidden="true"></i> Troca de pinos</span>
+          <span><i data-lucide="check" aria-hidden="true"></i> Vinhetas para DJs</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery section" id="galeria">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">Por dentro do Studio</p>
+            <h2>Produtos, cuidado e trabalho real</h2>
+          </div>
+          <p>Conheça um pouco da nossa loja, dos relógios e dos serviços realizados no centro de Cururupu.</p>
+        </div>
+
+        <div class="gallery-filters reveal" role="group" aria-label="Filtrar galeria">
+          <button class="filter-button is-active" type="button" data-filter="all">Todos</button>
+          <button class="filter-button" type="button" data-filter="loja">Loja</button>
+          <button class="filter-button" type="button" data-filter="relogios">Relógios</button>
+          <button class="filter-button" type="button" data-filter="servicos">Serviços</button>
+        </div>
+
+        <div class="gallery-grid">
+          <button class="gallery-item gallery-item-tall reveal" type="button" data-category="loja" data-gallery="assets/fachada/fachada.jpg" data-alt="Fachada do Studio Seiko">
+            <img src="assets/fachada/fachada.jpg" alt="Fachada do Studio Seiko" width="941" height="1492" loading="lazy">
+            <span>Fachada</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="loja" data-gallery="assets/loja/vitrine.jpg" data-alt="Vitrine do Studio Seiko">
+            <img src="assets/loja/vitrine.jpg" alt="Vitrine do Studio Seiko" width="941" height="1332" loading="lazy">
+            <span>Vitrine</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="loja" data-gallery="assets/vitrine-torre.jpg.png" data-alt="Vitrine Torre do Studio Seiko">
+            <img src="assets/vitrine-torre.jpg.png" alt="Vitrine Torre do Studio Seiko" width="941" height="1332" loading="lazy">
+            <span>Vitrine Torre</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogios/technos-feminino.jpg" data-alt="Relógio feminino Technos">
+            <img src="assets/relogios/technos-feminino.jpg" alt="Relógio feminino Technos" width="896" height="1200" loading="lazy">
+            <span>Technos</span>
+          </button>
+          <button class="gallery-item gallery-item-wide reveal" type="button" data-category="servicos" data-gallery="assets/servicos/afiacao-alicate.jpg" data-alt="Afiação profissional de alicates">
+            <img src="assets/servicos/afiacao-alicate.jpg" alt="Afiação profissional de alicates" width="1448" height="1086" loading="lazy">
+            <span>Afiação de alicates</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogios/diesel.jpg" data-alt="Relógio Diesel">
+            <img src="assets/relogios/diesel.jpg" alt="Relógio Diesel" width="896" height="1200" loading="lazy">
+            <span>Diesel</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="servicos" data-gallery="assets/servicos/conserto-oculos.jpg" data-alt="Conserto de óculos">
+            <img src="assets/servicos/conserto-oculos.jpg" alt="Conserto de óculos" width="1448" height="1086" loading="lazy">
+            <span>Conserto de óculos</span>
+          </button>
+          <button class="gallery-item gallery-item-wide reveal" type="button" data-category="servicos" data-gallery="assets/servicos/solda-joias.jpg" data-alt="Solda de joias">
+            <img src="assets/servicos/solda-joias.jpg" alt="Solda de joias" width="1122" height="1059" loading="lazy">
+            <span>Solda de joias</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogios/orient.jpg" data-alt="Relógio Orient">
+            <img src="assets/relogios/orient.jpg" alt="Relógio Orient" width="896" height="1200" loading="lazy">
+            <span>Orient</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogios/lince.jpg" data-alt="Relógio Lince">
+            <img src="assets/relogios/lince.jpg" alt="Relógio Lince" width="896" height="1200" loading="lazy">
+            <span>Lince</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogios/technos.jpg" data-alt="Relógio Technos">
+            <img src="assets/relogios/technos.jpg" alt="Relógio Technos" width="896" height="1200" loading="lazy">
+            <span>Technos</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogios/casio.jpg" data-alt="Relógio Casio">
+            <img src="assets/relogios/casio.jpg" alt="Relógio Casio" width="896" height="1200" loading="lazy">
+            <span>Casio</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-champion_digital.jpg.jpeg" data-alt="Relógio Champion Digital">
+            <img src="assets/relogio-champion_digital.jpg.jpeg" alt="Relógio Champion Digital" width="896" height="1200" loading="lazy">
+            <span>Champion</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-orient-feminino.jpg.jpeg" data-alt="Relógio Orient Feminino">
+            <img src="assets/relogio-orient-feminino.jpg.jpeg" alt="Relógio Orient Feminino" width="896" height="1200" loading="lazy">
+            <span>Orient</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-Technos_ceramica.jpg.jpeg" data-alt="Relógio Technos Cerâmica">
+            <img src="assets/relogio-Technos_ceramica.jpg.jpeg" alt="Relógio Technos Cerâmica" width="896" height="1200" loading="lazy">
+            <span>Technos</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-vip-masculino.jpg.jpeg" data-alt="Relógio VIP Nautilus">
+            <img src="assets/relogio-vip-masculino.jpg.jpeg" alt="Relógio VIP Nautilus" width="896" height="1200" loading="lazy">
+            <span>VIP</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-vip_slin.jpg.jpeg" data-alt="Relógio VIP Slim">
+            <img src="assets/relogio-vip_slin.jpg.jpeg" alt="Relógio VIP Slim" width="896" height="1200" loading="lazy">
+            <span>VIP</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-Technos_masculino2.jpg.jpeg" data-alt="Relógio Technos">
+            <img src="assets/relogio-Technos_masculino2.jpg.jpeg" alt="Relógio Technos" width="896" height="1200" loading="lazy">
+            <span>Technos</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-casio.jpg.jpeg" data-alt="Relógio Casio">
+            <img src="assets/relogio-casio.jpg.jpeg" alt="Relógio Casio" width="896" height="1200" loading="lazy">
+            <span>Casio</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-kit-lince.jpg.jpeg" data-alt="Kit Lince">
+            <img src="assets/relogio-kit-lince.jpg.jpeg" alt="Kit Lince" width="896" height="1200" loading="lazy">
+            <span>Lince</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-lince.jpg.jpeg" data-alt="Relógio Lince">
+            <img src="assets/relogio-lince.jpg.jpeg" alt="Relógio Lince" width="896" height="1200" loading="lazy">
+            <span>Lince</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-technos_masculino.jpg.jpeg" data-alt="Relógio Technos Masculino">
+            <img src="assets/relogio-technos_masculino.jpg.jpeg" alt="Relógio Technos Masculino" width="896" height="1200" loading="lazy">
+            <span>Technos</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-technos_feminino.jpg.jpeg" data-alt="Relógio Technos Feminino">
+            <img src="assets/relogio-technos_feminino.jpg.jpeg" alt="Relógio Technos Feminino" width="896" height="1200" loading="lazy">
+            <span>Technos</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="relogios" data-gallery="assets/relogio-Orient-masculino.jpg.jpeg" data-alt="Relógio Orient Masculino">
+            <img src="assets/relogio-Orient-masculino.jpg.jpeg" alt="Relógio Orient Masculino" width="896" height="1200" loading="lazy">
+            <span>Orient</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="reputation section" id="depoimentos">
+      <div class="container reputation-shell reveal">
+        <div class="reputation-symbol" aria-hidden="true">
+          <i data-lucide="quote"></i>
+        </div>
+        <div class="reputation-copy">
+          <p class="section-kicker">Confiança construída no balcão</p>
+          <h2>Uma história passada de geração em geração</h2>
+          <p>O Studio Seiko cresceu com o atendimento próximo, o trabalho honesto e o cuidado dedicado a cada cliente. É assim que honramos o legado de João Souza e seguimos fazendo parte da rotina de Cururupu.</p>
+          <div class="reputation-signature">
+            <span class="signature-line"></span>
+            <div><strong>Studio Seiko</strong><small>Tradição que acompanha o tempo</small></div>
+          </div>
+        </div>
+        <div class="reputation-photo">
+          <img src="assets/loja/equipe.jpg" alt="Equipe do Studio Seiko" width="1084" height="1451" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contato">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="section-kicker">Estamos no centro de Cururupu</p>
+          <h2>Venha conhecer o Studio Seiko</h2>
+          <p>Fale com nossa equipe ou visite a loja. Será um prazer atender você.</p>
+
+          <address class="contact-list">
+            <a href="https://www.google.com/maps/place/STUDIO+SEIKO/@-1.8292838,-44.8706258,17z/data=!3m1!4b1!4m6!3m5!1s0x7f7faf56ad4160d:0x6d7081d9b28c65e5!8m2!3d-1.8292838!4d-44.8706258!16s%2Fg%2F11b7grqczv" target="_blank" rel="noopener">
+              <span class="contact-icon"><i data-lucide="map-pin" aria-hidden="true"></i></span>
+              <span><small>Endereço</small><strong>Rua Dom Pedro 2º, Centro<br>Cururupu · MA</strong></span>
+              <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/5598984043949" target="_blank" rel="noopener">
+              <span class="contact-icon"><i data-lucide="phone" aria-hidden="true"></i></span>
+              <span><small>WhatsApp</small><strong>(98) 98404-3949</strong></span>
+              <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com/studioseikocpu" target="_blank" rel="noopener">
+              <span class="contact-icon"><i data-lucide="instagram" aria-hidden="true"></i></span>
+              <span><small>Instagram</small><strong>@studioseikocpu</strong></span>
+              <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </address>
+
+          <div class="contact-actions">
+            <a class="button button-primary" href="https://wa.me/5598984043949?text=Olá%2C%20Studio%20Seiko!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener">
+              <i data-lucide="message-circle" aria-hidden="true"></i>
+              Chamar no WhatsApp
+            </a>
+            <a class="button button-outline" href="https://instagram.com/studioseikocpu" target="_blank" rel="noopener">
+              <i data-lucide="instagram" aria-hidden="true"></i>
+              Ver Instagram
+            </a>
+          </div>
+        </div>
+
+        <div class="map-panel reveal">
+          <iframe title="Mapa do Studio Seiko, Centro, Cururupu - MA" src="https://maps.google.com/maps?q=STUDIO%20SEIKO,%20Cururupu%20-%20MA&t=&z=17&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-label">
+            <img src="assets/logo/logo.png" alt="" width="40" height="43">
+            <div><strong>Studio Seiko</strong><span>Centro de Cururupu</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#inicio">
+          <img src="assets/logo/logo.png" alt="" width="52" height="55">
+          <span class="brand-copy"><strong>Studio Seiko</strong><small>Tradição e inovação</small></span>
+        </a>
+        <p>Relógios, assistência e serviços com confiança no centro de Cururupu.</p>
+      </div>
+      <div class="footer-column">
+        <strong>Navegação</strong>
+        <a href="#historia">Quem Somos</a>
+        <a href="#relogios">Relógios</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+      </div>
+      <div class="footer-column">
+        <strong>Atendimento</strong>
+        <a href="https://wa.me/5598984043949" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://instagram.com/studioseikocpu" target="_blank" rel="noopener">Instagram</a>
+        <a href="#contato">Localização</a>
+      </div>
+      <div class="footer-column">
+        <strong>Informações</strong>
+        <a href="politica-de-privacidade.html">Política de Privacidade</a>
+        <a href="termos-de-uso.html">Termos de Uso</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Studio Seiko - Todos os direitos reservados.</p>
+      <p>Rua Dom Pedro 2º, Centro - Cururupu - MA</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5598984043949?text=Olá%2C%20Studio%20Seiko!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener" aria-label="Chamar o Studio Seiko no WhatsApp">
+    <i data-lucide="message-circle" aria-hidden="true"></i>
+    <span>WhatsApp</span>
+  </a>
+
+  <dialog class="lightbox" aria-label="Visualização da galeria">
+    <button class="lightbox-close" type="button" aria-label="Fechar imagem"><i data-lucide="x" aria-hidden="true"></i></button>
+    <img alt="">
+    <p></p>
+  </dialog>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    // ===== Animação do Hero (sequência de frames) =====
+    (function () {
+      const frameCount = 80; // frames 000 a 079
+      const fps = 15;
+      const basePath = 'imagens/Watch_assembly_luxury_animation_202606121736_';
+      const ext = '.jpg';
+      const heroFrame = document.getElementById('hero-frame');
+      if (!heroFrame) return;
+
+      // Pré-carrega todos os frames (o primeiro já está visível via preload)
+      const frames = [];
+      for (let i = 0; i < frameCount; i++) {
+        const num = String(i).padStart(3, '0');
+        const img = new Image();
+        img.src = basePath + num + ext;
+        frames.push(img);
+      }
+
+      heroFrame.classList.add('is-ready');
+
+      // Respeita usuários que preferem menos movimento: fica só no primeiro frame
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion || frameCount < 2) return;
+
+      let index = 0;
+      let direction = 1; // 1 = avança, -1 = volta (efeito vai-e-volta, sem corte brusco)
+
+      setInterval(function () {
+        let nextIndex = index + direction;
+        if (nextIndex >= frameCount || nextIndex < 0) {
+          direction *= -1;
+          nextIndex = index + direction;
+        }
+        // só avança se o próximo frame já estiver carregado, evitando travadas
+        if (frames[nextIndex].complete) {
+          index = nextIndex;
+          heroFrame.src = frames[index].src;
+        }
+      }, 1000 / fps);
+    })();
+  </script>
+</body>
+</html>

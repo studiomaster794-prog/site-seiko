@@ -105,3 +105,13 @@ document.querySelectorAll(".reveal").forEach((element) => {
 });
 
 renderIcons();
+
+
+// Corrige o link "Início": rola a página para o topo
+document.querySelectorAll('a[href="#inicio"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    closeMenu();
+  });
+});

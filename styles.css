@@ -392,7 +392,6 @@ h3 {
   position: fixed;
   top: var(--header-height);
   right: 0;
-  bottom: 0;
   left: 0;
   padding: 30px 24px;
   background: rgba(10, 10, 10, 0.98);

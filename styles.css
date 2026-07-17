@@ -1841,6 +1841,110 @@ h3 {
 }
 
 /* ============================================================
+   EQUIPE / REPUTAÇÃO (Wagner e Matheus) — acima do contato
+   ============================================================ */
+
+.reputation {
+  background: var(--ivory, #0a0a0a);
+}
+
+.reputation-shell {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--ink-soft, #121212);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-xl, 24px);
+  box-shadow: var(--shadow-soft);
+}
+
+.reputation-symbol {
+  position: absolute;
+  top: 30px;
+  left: 24px;
+  color: rgba(201, 168, 76, 0.12);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reputation-symbol svg {
+  width: 72px;
+  height: 72px;
+}
+
+.reputation-copy {
+  position: relative;
+  z-index: 1;
+  padding: 80px 24px 36px;
+}
+
+.reputation-copy h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.8rem, 6vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.reputation-copy > p:not(.section-kicker) {
+  color: var(--gray-700, #a8a8a8);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+.reputation-signature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.reputation-signature .signature-line {
+  width: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold, #c9a84c), transparent);
+  flex-shrink: 0;
+}
+
+.reputation-signature div {
+  display: grid;
+}
+
+.reputation-signature strong {
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.reputation-signature small {
+  color: var(--gold, #c9a84c);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 3px;
+}
+
+.reputation-photo {
+  height: 360px;
+  border-top: 1px solid var(--border-dark, rgba(255, 255, 255, 0.06));
+  overflow: hidden;
+}
+
+.reputation-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.8s var(--ease-luxury, cubic-bezier(0.22, 1, 0.36, 1));
+}
+
+.reputation-shell:hover .reputation-photo img {
+  transform: scale(1.03);
+}
+
+/* ============================================================
    CONTATO
    ============================================================ */
 
@@ -3030,6 +3134,29 @@ audio::-webkit-media-controls-volume-slider {
 
   .service-wide-copy {
     padding: 64px;
+  }
+
+  .reputation-shell {
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: stretch;
+  }
+
+  .reputation-copy {
+    padding: 80px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .reputation-photo {
+    height: 100%;
+    min-height: 520px;
+    border-top: 0;
+    border-left: 1px solid var(--border-dark, rgba(255, 255, 255, 0.06));
+  }
+
+  .reputation-photo img {
+    object-position: center 28%;
   }
 
   .contact-grid {

@@ -1,13 +1,23 @@
+# dependências locais (site é HTML estático)
 node_modules/
+package.json
 package-lock.json
+
+# sistema / logs
 *.log
 .DS_Store
 Thumbs.db
 
-# capturas de referência da conversa (não vão pro site)
-image-botao-whatsapp.jpg
-image-pc-hero.jpg
-image-cinco-estrelas.jpg
-image-4.3-estrelas.jpg
-image-tem-2.jpg
+# notas e capturas de trabalho (não fazem parte do site)
+melhorias que vou fazer.txt
 image-*.jpg
+*.txt
+
+# originais pesados / duplicatas (o site usa .webp)
+*.jpg.jpeg
+*.jpg.png
+*.png.png
+assets/**/*.jpg
+assets/**/*.jpeg
+assets/**/*.png
+!assets/**/*.webp

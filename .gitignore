@@ -1,0 +1,13 @@
+node_modules/
+package-lock.json
+*.log
+.DS_Store
+Thumbs.db
+
+# capturas de referência da conversa (não vão pro site)
+image-botao-whatsapp.jpg
+image-pc-hero.jpg
+image-cinco-estrelas.jpg
+image-4.3-estrelas.jpg
+image-tem-2.jpg
+image-*.jpg

@@ -51,6 +51,7 @@ storyToggle?.addEventListener("click", () => {
   storyToggle.setAttribute("aria-expanded", String(!isOpen));
   storyMore.hidden = isOpen;
   storyToggle.querySelector("span").textContent = isOpen ? "Continuar lendo" : "Mostrar menos";
+  window.trackStudioEvent?.("story_toggle", { expanded: !isOpen });
 });
 
 const filterButtons = document.querySelectorAll("[data-filter]");
@@ -101,6 +102,7 @@ filterButtons.forEach((button) => {
     });
     galleryExpanded = false;
     applyGalleryVisibility();
+    window.trackStudioEvent?.("gallery_filter", { gallery_category: filter });
   });
 });
 
@@ -108,6 +110,7 @@ galleryMoreBtn?.addEventListener("click", () => {
   galleryExpanded = !galleryExpanded;
   applyGalleryVisibility();
   renderIcons();
+  window.trackStudioEvent?.("gallery_more_toggle", { expanded: galleryExpanded });
 });
 
 applyGalleryVisibility();
@@ -126,6 +129,7 @@ document.querySelectorAll("[data-gallery]").forEach((item) => {
     lightboxImage.alt = item.dataset.alt;
     lightboxCaption.textContent = item.dataset.alt;
     lightbox.showModal();
+    window.trackStudioEvent?.("gallery_image_open", { image_name: item.dataset.alt });
   });
 });
 
@@ -188,14 +192,24 @@ document.querySelectorAll('a[href="#inicio"]').forEach((link) => {
   const video = document.querySelector(".hero-video");
   if (!video) return;
 
+  const source = video.querySelector("source[data-src]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduceMotion) {
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const saveData = Boolean(connection?.saveData);
+  const verySlowConnection = ["slow-2g", "2g"].includes(connection?.effectiveType);
+
+  if (reduceMotion || saveData || verySlowConnection || !source) {
     video.pause();
     video.removeAttribute("autoplay");
     return;
   }
 
+  let videoLoaded = false;
+  let pageReady = document.readyState === "complete";
+  let heroVisible = true;
+
   const tryPlay = () => {
+    if (!videoLoaded || document.hidden || !heroVisible) return;
     const playPromise = video.play();
     if (playPromise && typeof playPromise.catch === "function") {
       playPromise.catch(() => {
@@ -204,7 +218,28 @@ document.querySelectorAll('a[href="#inicio"]').forEach((link) => {
     }
   };
 
-  tryPlay();
+  const loadVideo = () => {
+    if (videoLoaded || !pageReady || !heroVisible) return;
+    source.src = source.dataset.src;
+    videoLoaded = true;
+    video.load();
+    video.addEventListener("canplay", tryPlay, { once: true });
+  };
+
+  const scheduleVideoLoad = () => {
+    pageReady = true;
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(loadVideo, { timeout: 1800 });
+    } else {
+      window.setTimeout(loadVideo, 700);
+    }
+  };
+
+  if (pageReady) {
+    scheduleVideoLoad();
+  } else {
+    window.addEventListener("load", scheduleVideoLoad, { once: true });
+  }
 
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
@@ -218,7 +253,9 @@ document.querySelectorAll('a[href="#inicio"]').forEach((link) => {
     const heroObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          heroVisible = entry.isIntersecting;
           if (entry.isIntersecting) {
+            loadVideo();
             tryPlay();
           } else {
             video.pause();
@@ -257,6 +294,11 @@ document.querySelectorAll('a[href="#inicio"]').forEach((link) => {
       button.setAttribute("aria-expanded", String(!isOpen));
       answer.hidden = isOpen;
       item.classList.toggle("is-open", !isOpen);
+      if (!isOpen) {
+        window.trackStudioEvent?.("faq_open", {
+          question: button.textContent.trim().replace(/\s+/g, " ").slice(0, 120),
+        });
+      }
     });
   });
 })();

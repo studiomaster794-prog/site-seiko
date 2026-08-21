@@ -1,0 +1,320 @@
+.service-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(201, 168, 76, 0.09), transparent 30%),
+    var(--ivory);
+}
+
+.service-page-header {
+  position: relative;
+  z-index: 20;
+  border-bottom: 1px solid var(--border-dark);
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(20px);
+}
+
+.service-page-header .header-shell {
+  min-height: 82px;
+}
+
+.service-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-800);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.service-back-link:hover {
+  color: var(--gold-bright);
+}
+
+.service-back-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.service-page-hero {
+  position: relative;
+  display: grid;
+  min-height: min(780px, calc(100svh - 82px));
+  align-items: end;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.service-page-hero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.48;
+  filter: saturate(0.78) contrast(1.06);
+}
+
+.service-page-hero::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(7, 7, 7, 0.98) 0%, rgba(7, 7, 7, 0.76) 52%, rgba(7, 7, 7, 0.34) 100%),
+    linear-gradient(0deg, #0a0a0a 0%, transparent 48%);
+}
+
+.service-page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding-top: 100px;
+  padding-bottom: clamp(72px, 11vw, 132px);
+}
+
+.service-page-hero h1 {
+  max-width: 12ch;
+  margin: 0 0 24px;
+  color: var(--white);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3rem, 8vw, 6.4rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.service-page-lead {
+  max-width: 58ch;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.75;
+}
+
+.service-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.service-confidence {
+  border-bottom: 1px solid var(--border-dark);
+  background: #0d0d0d;
+}
+
+.service-confidence-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--border-dark);
+}
+
+.service-confidence-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 24px 0;
+  background: #0d0d0d;
+}
+
+.service-confidence-item svg {
+  color: var(--gold);
+}
+
+.service-confidence-item strong,
+.service-confidence-item span {
+  display: block;
+}
+
+.service-confidence-item strong {
+  color: var(--white);
+  font-size: 0.88rem;
+}
+
+.service-confidence-item span {
+  color: var(--gray-700);
+  font-size: 0.75rem;
+}
+
+.service-page-content {
+  display: grid;
+  gap: 48px;
+}
+
+.service-page-copy > p {
+  max-width: 68ch;
+  color: var(--gray-800);
+  font-size: 1rem;
+}
+
+.service-checklist {
+  display: grid;
+  gap: 12px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-checklist li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 15px 18px;
+  color: var(--gray-800);
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-sm);
+}
+
+.service-checklist svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  margin-top: 4px;
+  color: var(--gold);
+}
+
+.service-page-panel {
+  align-self: start;
+  padding: 30px;
+  background: linear-gradient(145deg, rgba(201, 168, 76, 0.1), rgba(255, 255, 255, 0.025));
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.service-page-panel h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+.service-page-panel p {
+  color: var(--gray-800);
+}
+
+.service-page-note {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0 24px;
+  color: var(--gray-700);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.service-page-note svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: var(--gold);
+}
+
+.service-page-faq {
+  background: var(--paper);
+  border-block: 1px solid var(--border-dark);
+}
+
+.service-page-faq-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.service-page-faq article {
+  padding: 24px;
+  background: var(--ink-soft);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+}
+
+.service-page-faq h3 {
+  margin-bottom: 8px;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.service-page-faq p {
+  margin: 0;
+  color: var(--gray-700);
+  font-size: 0.88rem;
+}
+
+.service-final-cta {
+  text-align: center;
+}
+
+.service-final-cta-shell {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(46px, 8vw, 82px) 24px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(223, 192, 106, 0.16), transparent 48%),
+    var(--ink-soft);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+}
+
+.service-final-cta h2,
+.service-final-cta p {
+  margin-inline: auto;
+}
+
+.service-final-cta p {
+  max-width: 560px;
+}
+
+.service-page-footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--border-dark);
+  color: var(--gray-700);
+  background: #050505;
+  font-size: 0.78rem;
+}
+
+.service-page-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+@media (min-width: 700px) {
+  .service-confidence-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .service-confidence-item {
+    padding: 28px 24px;
+  }
+
+  .service-page-faq-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .service-page-content {
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+    gap: 80px;
+  }
+}
+
+@media (max-width: 520px) {
+  .service-page-header .brand-copy small {
+    display: none;
+  }
+
+  .service-back-link span {
+    display: none;
+  }
+
+  .service-page-hero h1 {
+    font-size: clamp(2.7rem, 14vw, 4rem);
+  }
+
+  .service-page-actions,
+  .service-page-actions .button,
+  .service-page-panel .button {
+    width: 100%;
+  }
+}

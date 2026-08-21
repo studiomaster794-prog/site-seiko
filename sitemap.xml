@@ -6,6 +6,46 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://studioseiko.com.br/servicos/conserto-de-relogios.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studioseiko.com.br/servicos/troca-de-bateria.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studioseiko.com.br/servicos/ajuste-de-pulseira.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studioseiko.com.br/servicos/afiacao-de-alicates.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studioseiko.com.br/servicos/conserto-de-oculos.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studioseiko.com.br/servicos/solda-de-joias.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studioseiko.com.br/servicos/jingles-vinhetas-comerciais.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studioseiko.com.br/servicos/carro-de-som.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://studioseiko.com.br/politica-de-privacidade.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

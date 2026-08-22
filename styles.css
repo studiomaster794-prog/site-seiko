@@ -2909,7 +2909,13 @@ audio::-webkit-media-controls-volume-slider {
   .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 22px;
+  }
+
+  @media (min-width: 1200px) {
+    .desktop-nav {
+      gap: 32px;
+    }
   }
 
   .desktop-nav a {

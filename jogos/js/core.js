@@ -1,6 +1,6 @@
 (function (global) {
   const CONFIG = {
-    whatsapp: "5598984043949",
+    whatsapp: "5598981867212",
     shop: "https://studioseiko.com.br",
     instagram: "https://instagram.com/studioseikocpu",
     goldenChance: 0.035,
